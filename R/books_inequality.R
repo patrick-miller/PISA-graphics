@@ -45,11 +45,12 @@ BooksGraphic <- function(){
     panel.grid.major = element_line(color="darkgray", linetype="dashed", size=.3),
     panel.background = element_rect(color="black"),
     plot.title = element_text(size = 20, vjust=2),
-    axis.title = element_text(vjust=-.1, size = 12),
-    axis.title.x = element_text(vjust=-.11), axis.title.y = element_text(angle=90),
+    axis.title = element_text(vjust=-.1, size = 14),
+    axis.title.x = element_text(vjust=-.11), 
+    axis.title.y = element_text(angle=90),
     axis.text = element_text(size=11, color="black"), plot.margin = unit(c(1,1,1,1), "cm"),
     legend.position = "bottom", legend.background = element_rect(color="black"),
-    legend.title = element_blank(), legend.text = element_text(size = 11),
+    legend.title = element_blank(), legend.text = element_text(size = 14, vjust=1),
     strip.background = element_rect(color="black", fill="slategray1"), 
     strip.text = element_text(size = 12))
   
@@ -63,7 +64,7 @@ BooksGraphic <- function(){
     labs(x="Student score (overall)", y=NULL, 
          title="Students with more books at home score better on tests") +
     
-    scale_fill_identity(name="", guide="legend",labels = c("<= 25 books", "> 25 books")) +
+    scale_fill_identity(name="", guide="legend",labels = c(" <= 25 books", " > 25 books")) +
     
     theme_pisa + theme(
       axis.line = element_blank(),
@@ -79,6 +80,6 @@ BooksGraphic <- function(){
 #
 # Create books inequality .png
 #
-png(paste0(BaseDir, "/BooksInequality.png"), width=900, height=900)
-BooksGraphic()
+png(paste0(BaseDir, "/BooksInequality.png"), width=800, height=600)
+print(BooksGraphic())
 dev.off()

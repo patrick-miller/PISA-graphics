@@ -116,14 +116,15 @@ SchoolGraphic <- function(){
   theme_pisa <- theme_grey() + theme(panel.grid.minor = element_blank(), 
      panel.grid.major = element_line(color="darkgray", linetype="dashed", size=.3),
      panel.background = element_rect(color="black"),
-     plot.title = element_text(size = 16, vjust=2, face="italic"),
-     axis.title = element_text(vjust=-.1, size = 12),
-     axis.title.x = element_text(vjust=-.11), axis.title.y = element_text(angle=90),
-     axis.text = element_text(size=11, color="black"), plot.margin = unit(c(1,1,1,1), "cm"),
+     plot.title = element_text(size = 19, vjust=2, face="italic"),
+     axis.title = element_text(vjust=-.1, size = 14),
+     axis.title.x = element_text(vjust=-.11), 
+     axis.title.y = element_text(angle=90, vjust=2),
+     axis.text = element_text(size=12, color="black"), plot.margin = unit(c(1,1,1,1), "cm"),
      legend.position = "bottom", legend.background = element_rect(color="black"),
-     legend.title = element_blank(), legend.text = element_text(size = 11),
+     legend.title = element_blank(), legend.text = element_text(size = 14),
      strip.background = element_rect(color="black", fill="slategray1"), 
-     strip.text = element_text(size = 12))
+     strip.text = element_text(size = 14))
   
   outPlot1 <- ggplot(finalPlotDat) +
     
@@ -133,7 +134,7 @@ SchoolGraphic <- function(){
     geom_point(data=plotDD, aes(x=value, y=YText, color=variable), size=4, shape=18) +
     
     geom_text(aes(x=XText, y=YText, label=Country),
-              color="black", size=4) +
+              color="black", size=5) +
     
     labs(x="Median test score at the average school", y=NULL,
          title="Students at schools that provide computers with internet outperform on tests") +
@@ -166,7 +167,7 @@ SchoolGraphic <- function(){
       plot.margin = unit(c(1,10,6,8), "lines"))
   
   plotTitle <- textGrob(label="Internet Connectivity in Latin American Schools",
-                        gp=gpar(fontsize=20))
+                        gp=gpar(fontsize=24))
   
   
   outGrob <- arrangeGrob(plotTitle, outPlot1, outPlot2, heights=c(1/8, 4/8, 3/8))
