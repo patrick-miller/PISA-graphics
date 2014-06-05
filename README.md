@@ -1,7 +1,7 @@
 PISA_graphics
 =============
 
-Graphics for useR! - PISA
+Graphics for use!R - PISA
 
 
 After going through the datasets provided by PISA, these are the findings that I found most interesting:
